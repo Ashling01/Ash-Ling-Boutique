@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ropa para Caballero | AshLing Boutique</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+@keyframes fadeInUpCard {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.producto-animada {
+  animation: fadeInUpCard 0.7s cubic-bezier(.23,1.02,.32,1) both;
+}
+</style>
 </head>
 <body>
     <!-- Menú desplegable reutilizado -->
@@ -51,15 +66,73 @@
     });
     </script>
     <h2 style="color:#eab676; font-size:2rem; margin-bottom:2rem; text-align:center;">Ropa de Caballero</h2>
-    <div class='productos-lista' style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center;">
-        <div class='producto'>
-            <img src='ropa de caballero/61Yqhpg-YSL._AC_SL1500_.jpg' alt='Camisa de Caballero' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
-            <h3>Camisa de Caballero</h3>
-            <p><b>Código:</b> ROPC001</p>
-            <p><b>Precio:</b> $1300</p>
-            <p>Camisa elegante para caballero, ideal para ocasiones formales.</p>
-            <button onclick="agregarACompras('Camisa de Caballero','ROPC001',1300,'ropa de caballero/61Yqhpg-YSL._AC_SL1500_.jpg','Camisa elegante para caballero, ideal para ocasiones formales.')">Agregar a compras</button>
+    <div class='productos-lista' style="
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 260px;
+    text-align: center;
+    max-width: 520px;
+    margin: 0 auto;
+    background: #fffbe6;
+    border-radius: 28px;
+    box-shadow: 0 8px 32px #eab6d655, 0 2px 12px #eab67633;
+    border: 2px solid #eab676;
+    padding: 2.5rem 2rem 2rem 2rem;
+">
+        <div class="producto producto-animada" style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px #eab6d633, 0 2px 8px #eab67622;
+        padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+        border: 1.5px solid #eab676;
+        max-width: 220px;
+        margin-bottom: 1rem;
+        transition: box-shadow 0.2s;
+    ">
+            <img src="ropa de caballero/camisa01.jpg" alt="Ropa de caballero de muestra" style="
+            width: 160px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa;
+            margin-bottom: 1.1rem;
+            border: 2px solid #eab676;
+            background: #fffbe6;
+        ">
+            <span style="
+            font-size: 1.15rem;
+            color: #a67c52;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 0.2rem;
+        ">Ropa de Caballero</span>
         </div>
+        <span id="mensaje-caballero" style="
+        background: #eab6d6;
+        border-radius: 22px;
+        padding: 1.5rem 2.5rem;
+        box-shadow: 0 6px 32px #eab6d655, 0 2px 8px #fffbe6aa;
+        display: inline-block;
+        font-size: 2.1rem;
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-align: center;
+        min-width: 260px;
+        color: #6d4c2c;
+        border: 2px solid #eab676;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        transition: box-shadow 0.2s;
+    "></span>
     </div>
     <script>
 function agregarACompras(nombre, codigo, precio, imagen, descripcion) {
@@ -118,6 +191,17 @@ window.addEventListener('DOMContentLoaded', function() {
         };
     });
 });
+// Animación de escritura para mensaje de ropa de caballero
+const mensajeCaballero = "¡Descubre la elegancia y estilo que solo AshLing Boutique tiene para ti! Próximamente la mejor moda para caballeros.";
+    let iCaballero = 0;
+    function escribirMensajeCaballero() {
+        if(iCaballero <= mensajeCaballero.length) {
+            document.getElementById('mensaje-caballero').textContent = mensajeCaballero.slice(0, iCaballero);
+            iCaballero++;
+            setTimeout(escribirMensajeCaballero, 55);
+        }
+    }
+    escribirMensajeCaballero();
 </script>
 </body>
 </html>

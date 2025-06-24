@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joyas | AshLing Boutique</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes fadeInUpCard {
+          from {
+            opacity: 0;
+            transform: translateY(40px) scale(0.97);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        .producto-animada {
+          animation: fadeInUpCard 0.7s cubic-bezier(.23,1.02,.32,1) both;
+        }
+    </style>
 </head>
 <body>
     <div class="fondo-animado"></div>
@@ -30,13 +45,138 @@
     </nav>
     <h2 style="color:#eab676; font-size:2rem; margin-bottom:2rem; text-align:center;">Joyas</h2>
     <div class='productos-lista' style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center;">
-        <div class='producto'>
-            <img src='joyas/anillo con diamante.jpeg' alt='Anillo con diamante' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
-            <h3>Anillo con diamante</h3>
-            <p><b>Código:</b> JOY001</p>
-            <p><b>Precio:</b> $2000</p>
-            <p>Anillo con diamante brillante, diseño elegante y moderno.</p>
-            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo con diamante','JOY001',2000,'joyas/anillo con diamante.jpeg','Anillo con diamante brillante, diseño elegante y moderno.')">Agregar a compras</button>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0019.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> B000-6</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY002','', 'joyas/IMG-20250623-WA0019.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0020.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> 2637-07</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY003','', 'joyas/IMG-20250623-WA0020.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0021.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> B000-2</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY004','', 'joyas/IMG-20250623-WA0021.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0022.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> B000-4</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY005','', 'joyas/IMG-20250623-WA0022.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0023.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> B000-5</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY006','', 'joyas/IMG-20250623-WA0023.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0024.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> 0451-01</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY007','', 'joyas/IMG-20250623-WA0024.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0025.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> 2637-07</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY008','', 'joyas/IMG-20250623-WA0025.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0026.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> 0225-01</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY009','', 'joyas/IMG-20250623-WA0026.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0027.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> B000-1</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY010','', 'joyas/IMG-20250623-WA0027.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0028.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> 0340-9</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY011','', 'joyas/IMG-20250623-WA0028.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0029.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> B000-1-1 </p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY012','', 'joyas/IMG-20250623-WA0029.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/IMG-20250623-WA0030.jpg' alt='Anillo' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Anillo</h3>
+            <p><b>Código:</b> 0542-9</p>
+            <p>Joya exclusiva, diseño moderno y elegante.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Anillo','JOY013','', 'joyas/IMG-20250623-WA0030.jpg','Joya exclusiva, diseño moderno y elegante.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/0059-19.jpg' alt='0059-19' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Pulsera</h3>
+            <p><b>Código:</b> 0059-19</p>
+            <p>Pulsera elegante y moderno.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('0059-19','0059-19','', 'joyas/0059-19.jpg','Producto: 0059-19')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/0127-60.jpg' alt='0127-60' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Collar</h3>
+            <p><b>Código:</b> 0127-60</p>
+            <p>Collar elegante y moderno.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('0127-60','0127-60','', 'joyas/0127-60.jpg','Collar elegante y moderno.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/0140-40.jpg' alt='0140-40' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Collar</h3>
+            <p><b>Código:</b> 0140-40</p>
+            <p>Collar elegante y moderno.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('0140-40','0140-40','', 'joyas/0140-40.jpg','Collar elegante y moderno.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/0173-01.jpg' alt='0173-01' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Dije</h3>
+            <p><b>Código:</b> 0173-01</p>
+            <p>Dije elegante y moderno.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('0173-01','0173-01','', 'joyas/0173-01.jpg','Dije elegante y moderno.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/0191-19.jpg' alt='0191-19' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Pulsera</h3>
+            <p><b>Código:</b> 0191-19</p>
+            <p>Pulsera elegante y moderna.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('0191-19','0191-19','', 'joyas/0191-19.jpg','Pulsera elegante y moderna.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/56100473.jpg' alt='56100473' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Dije</h3>
+            <p><b>Código:</b> 56100473</p>
+            <p>Dije elegante y moderno.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('56100473','56100473','', 'joyas/56100473.jpg','Dije elegante y moderno.')">Agregar a compras</button>
+        </div>
+        <div class='producto producto-animada'>
+            <img src='joyas/LSP0111.jpg' alt='LSP0111' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
+            <h3>Pulsera</h3>
+            <p><b>Código:</b> LSP0111</p>
+            <p>Pulsera elegante y moderna.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('LSP0111','LSP0111','', 'joyas/LSP0111.jpg','Pulsera elegante y moderna.')">Agregar a compras</button>
         </div>
     </div>
     <script>

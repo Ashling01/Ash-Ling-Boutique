@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfumes | AshLing Boutique</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes fadeInUpCard {
+          from {
+            opacity: 0;
+            transform: translateY(40px) scale(0.97);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        .producto-animada {
+          animation: fadeInUpCard 0.7s cubic-bezier(.23,1.02,.32,1) both;
+        }
+    </style>
 </head>
 <body>
     <div class="fondo-animado"></div>
@@ -29,15 +44,73 @@
         </ul>
     </nav>
     <h2 style="color:#eab676; font-size:2rem; margin-bottom:2rem; text-align:center;">Perfumes</h2>
-    <div class='productos-lista' style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center;">
-        <div class='producto'>
-            <img src='perfumes/Perfume Darin.jpg' alt='Perfume Darin' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
-            <h3>Perfume Darin</h3>
-            <p><b>Código:</b> PER001</p>
-            <p><b>Precio:</b> $1100</p>
-            <p>Perfume Darin, fragancia exclusiva y duradera.</p>
-            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Perfume Darin','PER001',1100,'perfumes/Perfume Darin.jpg','Perfume Darin, fragancia exclusiva y duradera.')">Agregar a compras</button>
+    <div class='productos-lista' style="
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 260px;
+    text-align: center;
+    max-width: 520px;
+    margin: 0 auto;
+    background: #fffbe6;
+    border-radius: 28px;
+    box-shadow: 0 8px 32px #eab6d655, 0 2px 12px #eab67633;
+    border: 2px solid #eab676;
+    padding: 2.5rem 2rem 2rem 2rem;
+">
+        <div class="producto producto-animada" style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px #eab6d633, 0 2px 8px #eab67622;
+        padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+        border: 1.5px solid #eab676;
+        max-width: 220px;
+        margin-bottom: 1rem;
+        transition: box-shadow 0.2s;
+    ">
+            <img src="perfumes/perfume darin.jpg" alt="Perfume de muestra" style="
+            width: 160px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa;
+            margin-bottom: 1.1rem;
+            border: 2px solid #eab676;
+            background: #fffbe6;
+        ">
+            <span style="
+            font-size: 1.15rem;
+            color: #a67c52;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 0.2rem;
+        ">Perfume</span>
         </div>
+        <span id="mensaje-perfumes" style="
+    background: #eab6d6;
+    border-radius: 22px;
+    padding: 1.5rem 2.5rem;
+    box-shadow: 0 6px 32px #eab6d655, 0 2px 8px #fffbe6aa;
+    display: inline-block;
+    font-size: 2.1rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    min-width: 260px;
+    color: #6d4c2c;
+    border: 2px solid #eab676;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    transition: box-shadow 0.2s;
+"></span>
     </div>
     <script>
     function agregarACompras(nombre, codigo, precio, imagen, descripcion) {
@@ -116,6 +189,17 @@
             menu.style.display = 'none';
         }
     });
+    // Animación de escritura para mensaje de perfumes
+    const mensajePerfume = "Déjate envolver por la elegancia y el encanto de nuestros perfumes exclusivos. ¡Muy pronto en AshLing Boutique!";
+    let iPerfume = 0;
+    function escribirMensajePerfume() {
+        if(iPerfume <= mensajePerfume.length) {
+            document.getElementById('mensaje-perfumes').textContent = mensajePerfume.slice(0, iPerfume);
+            iPerfume++;
+            setTimeout(escribirMensajePerfume, 60);
+        }
+    }
+    escribirMensajePerfume();
     </script>
 </body>
 </html>

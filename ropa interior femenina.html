@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ropa Interior Femenina | AshLing Boutique</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes fadeInUpCard {
+          from {
+            opacity: 0;
+            transform: translateY(40px) scale(0.97);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        .producto-animada {
+          animation: fadeInUpCard 0.7s cubic-bezier(.23,1.02,.32,1) both;
+        }
+    </style>
 </head>
 <body>
     <div class="fondo-animado"></div>
@@ -29,15 +44,73 @@
         </ul>
     </nav>
     <h2 style="color:#eab676; font-size:2rem; margin-bottom:2rem; text-align:center;">Ropa Interior Femenina</h2>
-    <div class='productos-lista' style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center;">
-        <div class='producto'>
-            <img src='ropa interior femenina/descarga (1).jpeg' alt='Lencería Femenina' style='width:120px;height:120px;object-fit:cover;border-radius:10px;background:#eee;'>
-            <h3>Lencería Femenina</h3>
-            <p><b>Código:</b> RIF001</p>
-            <p><b>Precio:</b> $650</p>
-            <p>Lencería elegante y cómoda para dama.</p>
-            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarACompras('Lencería Femenina','RIF001',650,'ropa interior femenina/descarga (1).jpeg','Lencería elegante y cómoda para dama.')">Agregar a compras</button>
+    <div class='productos-lista' style="
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 260px;
+        text-align: center;
+        max-width: 520px;
+        margin: 0 auto;
+        background: #fffbe6;
+        border-radius: 28px;
+        box-shadow: 0 8px 32px #eab6d655, 0 2px 12px #eab67633;
+        border: 2px solid #eab676;
+        padding: 2.5rem 2rem 2rem 2rem;
+    ">
+        <div class="producto producto-animada" style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px #eab6d633, 0 2px 8px #eab67622;
+            padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+            border: 1.5px solid #eab676;
+            max-width: 220px;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s;
+        ">
+            <img src="ropa interior femenina/conjunto01.jpeg" alt="Ropa Interior Femenina de muestra" style="
+                width: 160px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 14px;
+                box-shadow: 0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa;
+                margin-bottom: 1.1rem;
+                border: 2px solid #eab676;
+                background: #fffbe6;
+            ">
+            <span style="
+                font-size: 1.15rem;
+                color: #a67c52;
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+                letter-spacing: 1px;
+                margin-top: 0.2rem;
+            ">Ropa Interior Femenina</span>
         </div>
+        <span id="mensaje-femenina" style="
+            background: #eab6d6;
+            border-radius: 22px;
+            padding: 1.5rem 2.5rem;
+            box-shadow: 0 6px 32px #eab6d655, 0 2px 8px #fffbe6aa;
+            display: inline-block;
+            font-size: 2.1rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-align: center;
+            min-width: 260px;
+            color: #6d4c2c;
+            border: 2px solid #eab676;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            transition: box-shadow 0.2s;
+        "></span>
     </div>
     <script>
     function agregarACompras(nombre, codigo, precio, imagen, descripcion) {
@@ -116,6 +189,17 @@
             menu.style.display = 'none';
         }
     });
+    // Animación de escritura para mensaje de ropa interior femenina
+    const mensajeFemenina = "Próximamente: elegancia, comodidad y sensualidad en cada prenda solo en AshLing Boutique.";
+    let iFemenina = 0;
+    function escribirMensajeFemenina() {
+        if(iFemenina <= mensajeFemenina.length) {
+            document.getElementById('mensaje-femenina').textContent = mensajeFemenina.slice(0, iFemenina);
+            iFemenina++;
+            setTimeout(escribirMensajeFemenina, 60);
+        }
+    }
+    escribirMensajeFemenina();
     </script>
 </body>
 </html>
