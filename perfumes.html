@@ -44,75 +44,271 @@
         </ul>
     </nav>
     <h2 style="color:#eab676; font-size:2rem; margin-bottom:2rem; text-align:center;">Perfumes</h2>
-    <div class='productos-lista' style="
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 260px;
-    text-align: center;
-    max-width: 520px;
-    margin: 0 auto;
-    background: #fffbe6;
-    border-radius: 28px;
-    box-shadow: 0 8px 32px #eab6d655, 0 2px 12px #eab67633;
-    border: 2px solid #eab676;
-    padding: 2.5rem 2rem 2rem 2rem;
-">
-        <div class="producto producto-animada" style="
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #fff;
-        border-radius: 18px;
-        box-shadow: 0 4px 24px #eab6d633, 0 2px 8px #eab67622;
-        padding: 1.5rem 1.2rem 1.2rem 1.2rem;
-        border: 1.5px solid #eab676;
-        max-width: 220px;
-        margin-bottom: 1rem;
-        transition: box-shadow 0.2s;
-    ">
-            <img src="perfumes/perfume01.jpg" alt="Perfume de muestra" style="
-            width: 160px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 14px;
-            box-shadow: 0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa;
-            margin-bottom: 1.1rem;
-            border: 2px solid #eab676;
-            background: #fffbe6;
-        ">
-            <span style="
-            font-size: 1.15rem;
-            color: #a67c52;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-top: 0.2rem;
-        ">Perfume</span>
+    <!-- Contenedor centrado para las tarjetas de producto -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-bottom:2rem;">
+        <!-- Ejemplo de tarjeta de producto -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; /*margin-bottom:1rem;*/ transition:box-shadow 0.2s;">
+            <img src="perfumes/0045.jpg" alt="Perfume 0045" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 0045</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
         </div>
-        <span id="mensaje-perfumes" style="
-    background: #eab6d6;
-    border-radius: 22px;
-    padding: 1.5rem 2.5rem;
-    box-shadow: 0 6px 32px #eab6d655, 0 2px 8px #fffbe6aa;
-    display: inline-block;
-    font-size: 2.1rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-align: center;
-    min-width: 260px;
-    color: #6d4c2c;
-    border: 2px solid #eab676;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    transition: box-shadow 0.2s;
-"></span>
+        <!-- Fin tarjeta ejemplo -->
+        <!-- Producto agregado: Perfume 313-0 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; /*margin-bottom:1rem;*/ transition:box-shadow 0.2s;">
+            <img src="perfumes/313-0.jpg" alt="Perfume 313-0" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 313-0</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 313-0 -->
+        <!-- Producto agregado: Perfume 3403-2 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; /*margin-bottom:1rem;*/ transition:box-shadow 0.2s;">
+            <img src="perfumes/3403-2.jpg" alt="Perfume 3403-2" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 3403-2</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 3403-2 -->
+        <!-- Producto agregado: Perfume 3850-4 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; /*margin-bottom:1rem;*/ transition:box-shadow 0.2s;">
+            <img src="perfumes/3850-4.jpg" alt="Perfume 3850-4" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 3850-4</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 3850-4 -->
+        <!-- Producto agregado: Set de Perfume 5302-4 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/5302-4.jpg" alt="Set de Perfume 5302-4" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Set de Perfume</h3>
+            <p><b>Código:</b> 5302-4</p>
+            <p>Set de fragancias exclusivas, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 5302-4 -->
+        <!-- Producto agregado: Set de Perfume 33024 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/33024.jpg" alt="Set de Perfume 33024" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Set de Perfume</h3>
+            <p><b>Código:</b> 33024</p>
+            <p>Set de fragancias exclusivas, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 33024 -->
+        <!-- Producto agregado: Perfume 29838 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/29838.jpg" alt="Perfume 29838" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 29838</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 29838 -->
+        <!-- Producto agregado: Perfume 59314-22 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/59314-22.jpg" alt="Perfume 59314-22" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 59314-22</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 59314-22 -->
+        <!-- Producto agregado: Perfume 92047-4 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/92047-4.jpg" alt="Perfume 92047-4" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 92047-4</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 92047-4 -->
+        <!-- Producto agregado: Perfume 73847-1 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/73847-1.jpg" alt="Perfume 73847-1" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 73847-1</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 73847-1 -->
+        <!-- Producto agregado: Perfume 258872 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/258872.jpg" alt="Perfume 258872" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 258872</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 258872 -->
+        <!-- Producto agregado: Perfume 373584 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/373584.jpg" alt="Perfume 373584" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 373584</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 373584 -->
+        <!-- Producto agregado: Perfume 733875 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/733875.jpg" alt="Perfume 733875" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 733875</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 733875 -->
+        <!-- Producto agregado: Perfume 975061 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/975061.jpg" alt="Perfume 975061" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 975061</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 975061 -->
+        <!-- Producto agregado: Perfume 975870 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/975870.jpg" alt="Perfume 975870" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 975870</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 975870 -->
+        <!-- Producto agregado: Perfume 975924 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/975924.jpg" alt="Perfume 975924" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Perfume</h3>
+            <p><b>Código:</b> 975924</p>
+            <p>Fragancia exclusiva, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 975924 -->
+        <!-- Producto agregado: Crema 733011 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/733011.jpg" alt="Crema 733011" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Crema</h3>
+            <p><b>Código:</b> 733011</p>
+            <p>Crema hidratante, suaviza y nutre la piel.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 733011 -->
+        <!-- Producto agregado: Crema 597096 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/597096.jpg" alt="Crema 597096" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Crema</h3>
+            <p><b>Código:</b> 597096</p>
+            <p>Crema hidratante, suaviza y nutre la piel.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 597096 -->
+        <!-- Producto agregado: Crema 547168 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/547168.jpg" alt="Crema 547168" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Crema</h3>
+            <p><b>Código:</b> 547168</p>
+            <p>Crema hidratante, suaviza y nutre la piel.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 547168 -->
+        <!-- Producto agregado: Crema 482202 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/482202.jpg" alt="Crema 482202" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Crema</h3>
+            <p><b>Código:</b> 482202</p>
+            <p>Crema hidratante, suaviza y nutre la piel.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 482202 -->
+        <!-- Producto agregado: Crema 513170 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/513170.jpg" alt="Crema 513170" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Crema</h3>
+            <p><b>Código:</b> 513170</p>
+            <p>Crema hidratante, suaviza y nutre la piel.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 513170 -->
+        <!-- Producto agregado: Crema 482165 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/482165.jpg" alt="Crema 482165" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Crema</h3>
+            <p><b>Código:</b> 482165</p>
+            <p>Crema hidratante, suaviza y nutre la piel.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 482165 -->
+        <!-- Producto agregado: Crema 261233 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/261233.jpg" alt="Crema 261233" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Crema</h3>
+            <p><b>Código:</b> 261233</p>
+            <p>Crema hidratante, suaviza y nutre la piel.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 261233 -->
+        <!-- Producto agregado: Crema 313599 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/313599.jpg" alt="Crema 313599" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Crema</h3>
+            <p><b>Código:</b> 313599</p>
+            <p>Crema hidratante, suaviza y nutre la piel.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 313599 -->
+        <!-- Producto agregado: Set de Perfume 258889 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/258889.jpg" alt="Set de Perfume 258889" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Set de Perfume</h3>
+            <p><b>Código:</b> 258889</p>
+            <p>Set de fragancias exclusivas, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 258889 -->
+        <!-- Producto agregado: Set de Perfume 258902 -->
+        <div class="producto producto-animada" style="display:flex; flex-direction:column; align-items:center; background:#fff; border-radius:18px; box-shadow:0 4px 24px #eab6d633, 0 2px 8px #eab67622; padding:1.5rem 1.2rem 1.2rem 1.2rem; border:1.5px solid #eab676; max-width:220px; transition:box-shadow 0.2s;">
+            <img src="perfumes/258902.jpg" alt="Set de Perfume 258902" style="width:160px; height:180px; object-fit:cover; border-radius:14px; box-shadow:0 2px 16px #eab6d655, 0 1px 4px #fffbe6aa; margin-bottom:1.1rem; border:2px solid #eab676; background:#fffbe6;">
+            <h3>Set de Perfume</h3>
+            <p><b>Código:</b> 258902</p>
+            <p>Set de fragancias exclusivas, aroma elegante y duradero.</p>
+            <button style="margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:20px; padding:0.5rem 1.2rem; font-weight:bold; cursor:pointer; transition:background 0.2s; font-size:1rem;" onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
+        </div>
+        <!-- Fin producto 258902 -->
+    </div>
+    <div id="mensaje-producto-agregado" style="display:none;position:fixed;top:30px;left:50%;transform:translateX(-50%);background:#eab676;color:#222;padding:1rem 2rem;border-radius:18px;box-shadow:0 2px 16px #0005;font-size:1.1rem;z-index:2000;font-weight:bold;transition:opacity 0.3s;opacity:0;">
+        Producto agregado: <span id="nombre-producto-agregado"></span> (<span id="codigo-producto-agregado"></span>)
     </div>
     <script>
+    // Unificación de lógica de carrito y mensaje visual
+function mostrarMensajeProductoAgregado(nombre, codigo) {
+    var mensaje = document.getElementById('mensaje-producto-agregado');
+    document.getElementById('nombre-producto-agregado').textContent = nombre;
+    document.getElementById('codigo-producto-agregado').textContent = codigo;
+    mensaje.style.display = 'block';
+    setTimeout(function() { mensaje.style.opacity = '1'; }, 10);
+    setTimeout(function() {
+        mensaje.style.opacity = '0';
+        setTimeout(function() { mensaje.style.display = 'none'; }, 400);
+    }, 1600);
+}
+function agregarAComprasDesdeTarjeta(btn) {
+    var card = btn.closest('.producto');
+    var img = card.querySelector('img');
+    var nombre = card.querySelector('h3').textContent.trim();
+    var codigo = img.src.split('/').pop().split('.')[0];
+    var descripcion = card.querySelectorAll('p')[1].textContent.trim();
+    var producto = { nombre, codigo, imagen: img.getAttribute('src'), descripcion };
+    var productos = JSON.parse(localStorage.getItem('productosTienda') || '[]');
+    productos.push(producto);
+    localStorage.setItem('productosTienda', JSON.stringify(productos));
+    mostrarMensajeProductoAgregado(nombre, codigo);
+}
     function agregarACompras(nombre, codigo, precio, imagen, descripcion) {
         var productos = JSON.parse(localStorage.getItem('productosSeleccionados') || '[]');
         productos.push({nombre, codigo, precio, imagen, descripcion});
@@ -192,17 +388,6 @@
             menu.style.display = 'none';
         }
     });
-    // Animación de escritura para mensaje de perfumes
-    const mensajePerfume = "Déjate envolver por la elegancia y el encanto de nuestros perfumes exclusivos. ¡Muy pronto en AshLing Boutique!";
-    let iPerfume = 0;
-    function escribirMensajePerfume() {
-        if(iPerfume <= mensajePerfume.length) {
-            document.getElementById('mensaje-perfumes').textContent = mensajePerfume.slice(0, iPerfume);
-            iPerfume++;
-            setTimeout(escribirMensajePerfume, 60);
-        }
-    }
-    escribirMensajePerfume();
     </script>
 </body>
 </html>

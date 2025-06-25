@@ -221,33 +221,68 @@
             }
         });
         function mostrarMensajeProductoAgregado(nombre, codigo) {
-    var mensaje = document.getElementById('mensaje-producto-agregado');
-    document.getElementById('nombre-producto-agregado').textContent = nombre;
-    document.getElementById('codigo-producto-agregado').textContent = codigo;
-    mensaje.style.display = 'block';
-    setTimeout(function() {
-        mensaje.style.opacity = '1';
-    }, 10);
-    setTimeout(function() {
-        mensaje.style.opacity = '0';
-        setTimeout(function() {
-            mensaje.style.display = 'none';
-        }, 400);
-    }, 1600);
-}
+            var mensaje = document.getElementById('mensaje-producto-agregado');
+            document.getElementById('nombre-producto-agregado').textContent = nombre;
+            document.getElementById('codigo-producto-agregado').textContent = codigo;
+            mensaje.style.display = 'block';
+            setTimeout(function() {
+                mensaje.style.opacity = '1';
+            }, 10);
+            setTimeout(function() {
+                mensaje.style.opacity = '0';
+                setTimeout(function() {
+                    mensaje.style.display = 'none';
+                }, 400);
+            }, 1600);
+        }
 
-function agregarAComprasDesdeTarjeta(btn) {
-    var card = btn.closest('.producto');
-    var img = card.querySelector('img');
-    var nombre = card.querySelector('h3').textContent.trim();
-    var codigo = img.src.split('/').pop().split('.')[0];
-    var descripcion = card.querySelectorAll('p')[1].textContent.trim();
-    var producto = { nombre, codigo, imagen: img.getAttribute('src'), descripcion };
-    var productos = JSON.parse(localStorage.getItem('productosTienda') || '[]');
-    productos.push(producto);
-    localStorage.setItem('productosTienda', JSON.stringify(productos));
-    mostrarMensajeProductoAgregado(nombre, codigo);
-}
+        function agregarAComprasDesdeTarjeta(btn) {
+            var card = btn.closest('.producto');
+            var img = card.querySelector('img');
+            var nombre = card.querySelector('h3').textContent.trim();
+            var codigo = img.src.split('/').pop().split('.')[0];
+            var descripcion = card.querySelectorAll('p')[1].textContent.trim();
+            var producto = { nombre, codigo, imagen: img.getAttribute('src'), descripcion };
+            var productos = JSON.parse(localStorage.getItem('productosTienda') || '[]');
+            productos.push(producto);
+            localStorage.setItem('productosTienda', JSON.stringify(productos));
+            mostrarMensajeProductoAgregado(nombre, codigo);
+        }
+
+        // Función para ampliar imagen al hacer clic
+        function ampliarImagen(imgSrc, alt) {
+            var overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100vw';
+            overlay.style.height = '100vh';
+            overlay.style.background = 'rgba(0,0,0,0.8)';
+            overlay.style.display = 'flex';
+            overlay.style.alignItems = 'center';
+            overlay.style.justifyContent = 'center';
+            overlay.style.zIndex = '10000';
+            overlay.onclick = function() { overlay.remove(); };
+            var img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = alt || '';
+            img.style.maxWidth = '90vw';
+            img.style.maxHeight = '90vh';
+            img.style.borderRadius = '18px';
+            img.style.boxShadow = '0 4px 32px #000b';
+            overlay.appendChild(img);
+            document.body.appendChild(overlay);
+        }
+        // Asigna el evento a todas las imágenes de producto
+        window.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.producto img').forEach(function(img) {
+                img.style.cursor = 'zoom-in';
+                img.onclick = function(e) {
+                    e.stopPropagation();
+                    ampliarImagen(this.src, this.alt);
+                };
+            });
+        });
     </script>
 </body>
 </html>

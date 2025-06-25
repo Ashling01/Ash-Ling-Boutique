@@ -156,40 +156,40 @@ function agregarACompras(nombre, codigo, precio, imagen, descripcion) {
     document.body.appendChild(msg);
     setTimeout(function(){ msg.remove(); }, 1600);
 }
-// Función para ampliar imagen al hacer clic
-function ampliarImagen(imgSrc, alt) {
-    var overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100vw';
-    overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0,0,0,0.8)';
-    overlay.style.display = 'flex';
-    overlay.style.alignItems = 'center';
-    overlay.style.justifyContent = 'center';
-    overlay.style.zIndex = '10000';
-    overlay.onclick = function() { overlay.remove(); };
-    var img = document.createElement('img');
-    img.src = imgSrc;
-    img.alt = alt || '';
-    img.style.maxWidth = '90vw';
-    img.style.maxHeight = '90vh';
-    img.style.borderRadius = '18px';
-    img.style.boxShadow = '0 4px 32px #000b';
-    overlay.appendChild(img);
-    document.body.appendChild(overlay);
-}
-// Asigna el evento a todas las imágenes de producto
-window.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.producto img').forEach(function(img) {
-        img.style.cursor = 'zoom-in';
-        img.onclick = function(e) {
-            e.stopPropagation();
-            ampliarImagen(this.src, this.alt);
-        };
+    // Función para ampliar imagen al hacer clic
+    function ampliarImagen(imgSrc, alt) {
+        var overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.background = 'rgba(0,0,0,0.8)';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.zIndex = '10000';
+        overlay.onclick = function() { overlay.remove(); };
+        var img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = alt || '';
+        img.style.maxWidth = '90vw';
+        img.style.maxHeight = '90vh';
+        img.style.borderRadius = '18px';
+        img.style.boxShadow = '0 4px 32px #000b';
+        overlay.appendChild(img);
+        document.body.appendChild(overlay);
+    }
+    // Asigna el evento a todas las imágenes de producto
+    window.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.producto img').forEach(function(img) {
+            img.style.cursor = 'zoom-in';
+            img.onclick = function(e) {
+                e.stopPropagation();
+                ampliarImagen(this.src, this.alt);
+            };
+        });
     });
-});
     // Animación de escritura para mensaje de ropa de niños
     const mensajeNinos = "¡Muy pronto la moda más divertida y cómoda para los pequeños de la casa en AshLing Boutique!";
     let iNinos = 0;
