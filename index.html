@@ -30,8 +30,8 @@
     </nav>
     <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-top:3rem;">
         <img src="logo/logo.png" alt="Logo AshLing Boutique" style="max-width:340px; width:100%; height:auto; display:block; margin-bottom:2rem; filter:drop-shadow(0 2px 12px #eab67699);">
-        <h1 style="color:#eab676; font-family:'Playfair Display',serif; font-size:2.5rem; text-align:center; margin:0;">Bienvenidos a AshLing Boutique</h1>
-        <p style="color:#fff; font-size:1.25rem; text-align:center; max-width:600px; margin-top:1.5rem;">AshLing Boutique es tu tienda en línea de confianza, especializada en carteras, ropa, perfumes y joyas de alta calidad. Ofrecemos productos exclusivos, atención personalizada y una experiencia de compra única para realzar tu estilo en cada ocasión.</p>
+        <h1 id="titulo-animado" style="color:#eab676; font-family:'Playfair Display',serif; font-size:2.5rem; text-align:center; margin:0; min-height:3.2rem;"></h1>
+        <p id="descripcion-animada" style="color:#fff; font-size:1.25rem; text-align:center; max-width:600px; margin-top:1.5rem; min-height:3.2rem;"></p>
     </div>
     <footer style="width:100vw; background:#111; color:#eab676; text-align:center; padding:1.2rem 0 0.5rem 0; position:fixed; left:0; bottom:0; z-index:1200; font-size:1rem; box-shadow:0 -2px 12px #0004; display:flex; align-items:center; justify-content:center;">
         <span style="font-size:0.95rem; color:#eab676; flex:1; text-align:center;">&copy; 2025 AshLing Boutique. Marca registrada. Todos los derechos reservados.</span>
@@ -59,6 +59,28 @@
                 e.stopPropagation();
             }
         }, { passive: false });
+        // Animación de escritura para el título principal
+        const textoTitulo = "Bienvenidos a AshLing Boutique";
+        let iTitulo = 0;
+        function escribirTitulo() {
+            if(iTitulo <= textoTitulo.length) {
+                document.getElementById('titulo-animado').textContent = textoTitulo.slice(0, iTitulo);
+                iTitulo++;
+                setTimeout(escribirTitulo, 60);
+            }
+        }
+        escribirTitulo();
+        // Animación de escritura para la descripción
+        const textoDescripcion = "AshLing Boutique es tu tienda en línea de confianza, especializada en carteras, ropa, perfumes y joyas de alta calidad. Ofrecemos productos exclusivos, atención personalizada y una experiencia de compra única para realzar tu estilo en cada ocasión.";
+        let iDesc = 0;
+        function escribirDescripcion() {
+            if(iDesc <= textoDescripcion.length) {
+                document.getElementById('descripcion-animada').textContent = textoDescripcion.slice(0, iDesc);
+                iDesc++;
+                setTimeout(escribirDescripcion, 18);
+            }
+        }
+        setTimeout(escribirDescripcion, 1200);
     </script>
 </body>
 </html>

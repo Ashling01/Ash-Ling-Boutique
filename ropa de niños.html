@@ -19,7 +19,7 @@
 .producto-animada {
   animation: fadeInUpCard 0.7s cubic-bezier(.23,1.02,.32,1) both;
 }
-</style>
+    </style>
 </head>
 <body>
     <div class="fondo-animado"></div>
@@ -125,6 +125,15 @@
         "></span>
     </div>
     <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuList = document.getElementById('menu-list');
+        menuToggle.addEventListener('click', () => {
+            const isVisible = menuList.style.display === 'flex';
+            menuList.style.display = isVisible ? 'none' : 'flex';
+            if (!isVisible) {
+                menuList.style.animation = 'fadeIn 0.5s forwards';
+            }
+        });
 function agregarACompras(nombre, codigo, precio, imagen, descripcion) {
     var productos = JSON.parse(localStorage.getItem('productosSeleccionados') || '[]');
     productos.push({nombre, codigo, precio, imagen, descripcion});
