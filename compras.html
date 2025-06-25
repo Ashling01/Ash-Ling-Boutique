@@ -67,8 +67,48 @@
         </form>
     </div>
     <script>
-    // Mostrar productos seleccionados desde localStorage
-    var productosSeleccionados = JSON.parse(localStorage.getItem('productosSeleccionados') || '[]');
+    // Array global de productos de la tienda
+    var productosTienda = [
+        // Carteras
+        { codigo: 'CAR001', nombre: 'Cartera Rosada', imagen: 'carteras/BHH027.jpg', descripcion: 'Cartera rosada elegante, ideal para cualquier ocasión.' },
+        { codigo: 'CAR002', nombre: 'Cartera Negra', imagen: 'carteras/BHH164.jpg', descripcion: 'Cartera negra clásica, perfecta para combinar con cualquier outfit.' },
+        { codigo: 'CAR003', nombre: 'Cartera Beige', imagen: 'carteras/N075.jpg', descripcion: 'Cartera beige con detalles dorados, sofisticada y moderna.' },
+        { codigo: 'CAR004', nombre: 'Cartera Marrón', imagen: 'carteras/N085.jpg', descripcion: 'Cartera marrón de cuero sintético, resistente y elegante.' },
+        { codigo: 'CAR005', nombre: 'Cartera Azul', imagen: 'carteras/N089.jpg', descripcion: 'Cartera azul vibrante, ideal para destacar tu look.' },
+        { codigo: 'CAR006', nombre: 'Cartera Z886', imagen: 'carteras/Z886.jpg', descripcion: 'Cartera compacta y moderna, perfecta para el día a día.' },
+        // Joyas (ejemplo, puedes agregar más)
+        { codigo: 'JOY002', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0019.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY003', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0020.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY004', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0021.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY005', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0022.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY006', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0023.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY007', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0024.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY008', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0025.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY009', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0026.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY010', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0027.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY011', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0028.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY012', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0029.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: 'JOY013', nombre: 'Anillo', imagen: 'joyas/IMG-20250623-WA0030.jpg', descripcion: 'Joya exclusiva, diseño moderno y elegante.' },
+        { codigo: '0059-19', nombre: 'Pulsera', imagen: 'joyas/0059-19.jpg', descripcion: 'Pulsera elegante y moderno.' },
+        { codigo: '0127-60', nombre: 'Collar', imagen: 'joyas/0127-60.jpg', descripcion: 'Collar elegante y moderno.' },
+        { codigo: '0140-40', nombre: 'Collar', imagen: 'joyas/0140-40.jpg', descripcion: 'Collar elegante y moderno.' },
+        { codigo: '0173-01', nombre: 'Dije', imagen: 'joyas/0173-01.jpg', descripcion: 'Dije elegante y moderno.' },
+        // Perfumes (ejemplo, puedes agregar más)
+        { codigo: 'PERF001', nombre: 'Perfume de muestra', imagen: 'perfumes/IMG-20250624-WA0104.jpg', descripcion: 'Déjate envolver por la elegancia y el encanto de nuestros perfumes exclusivos.' },
+        { codigo: 'PERF002', nombre: 'Perfume de muestra', imagen: 'perfumes/IMG-20250624-WA0105.jpg', descripcion: 'Déjate envolver por la elegancia y el encanto de nuestros perfumes exclusivos.' },
+        // Ropa de Dama (ejemplo, puedes agregar más)
+        { codigo: 'ROPD001', nombre: 'Vestido de Dama', imagen: 'ropa de dama/vestido01.jpg', descripcion: 'Vestido elegante para dama, ideal para eventos especiales.' }
+        // ...agrega aquí todos los productos de la tienda...
+    ];
+    // Mostrar productos seleccionados desde localStorage (unificado)
+    var productosSeleccionados = JSON.parse(localStorage.getItem('productosTienda') || '[]');
+    // Actualizar datos de productos con la información más reciente de la tienda
+    function obtenerDatosActualizados(prod) {
+        var actualizado = productosTienda.find(function(p) { return p.codigo === prod.codigo; });
+        return actualizado ? { ...prod, ...actualizado } : prod;
+    }
+    productosSeleccionados = productosSeleccionados.map(obtenerDatosActualizados);
+    localStorage.setItem('productosTienda', JSON.stringify(productosSeleccionados));
     var tarjetas = document.getElementById('tarjetas-productos');
     if(productosSeleccionados.length > 0) {
         tarjetas.innerHTML = '';
@@ -89,9 +129,9 @@
             div.style.animationDelay = (idx * 0.12) + 's';
             div.innerHTML = `
                 <img src='${prod.imagen}' alt='${prod.nombre}' style='width:120px;height:120px;object-fit:cover;border-radius:12px;background:#eee; margin-bottom:0.9rem; box-shadow:0 2px 8px #eab67633;'>
-                <h3 style=\"color:#eab676; font-size:1.18rem; margin:0.3rem 0 0.1rem 0; font-family:'Playfair Display',serif;\">${prod.nombre}</h3>
-                <p style=\"margin:0.1rem 0;font-size:1.01rem; color:#444;\"><b>Código:</b> ${prod.codigo}</p>
-                <p style=\"margin:0.1rem 0 0.2rem 0;font-size:0.99rem; color:#555;\">${prod.descripcion}</p>
+                <h3 style="color:#eab676; font-size:1.18rem; margin:0.3rem 0 0.1rem 0; font-family:'Playfair Display',serif;">${prod.nombre}</h3>
+                <p style="margin:0.1rem 0;font-size:1.01rem; color:#444;"><b>Código:</b> ${prod.codigo}</p>
+                <p style="margin:0.1rem 0 0.2rem 0;font-size:0.99rem; color:#555;">${prod.descripcion}</p>
                 <button class='eliminar-producto' data-idx='${idx}' style='margin-top:0.8rem; background:#eab676; color:#222; border:none; border-radius:10px; padding:0.5rem 1.2rem; font-weight:bold; font-size:1rem; cursor:pointer; box-shadow:0 1px 6px #eab67633; transition:background 0.2s;'>Eliminar</button>
             `;
             tarjetas.appendChild(div);
@@ -102,7 +142,7 @@
             btn.onclick = function() {
                 var idx = Number(this.getAttribute('data-idx'));
                 productosSeleccionados.splice(idx, 1);
-                localStorage.setItem('productosSeleccionados', JSON.stringify(productosSeleccionados));
+                localStorage.setItem('productosTienda', JSON.stringify(productosSeleccionados));
                 location.reload();
             };
         });
@@ -126,6 +166,47 @@
         localStorage.removeItem('productosSeleccionados');
         tarjetas.innerHTML = '<div style=\"color:#888; text-align:center;\">No hay productos seleccionados.</div>';
     };
+    // Función genérica para agregar productos desde la tarjeta visual
+    function agregarAComprasDesdeTarjeta(btn) {
+        var card = btn.closest('.producto');
+        var nombre = card.querySelector('h3').innerText;
+        var codigo = '';
+        // Buscar el código en el <p> que contiene "Código:"
+        card.querySelectorAll('p').forEach(function(p) {
+            if(p.innerText.includes('Código:')) {
+                codigo = p.innerText.replace('Código:', '').trim();
+            }
+        });
+        var imagen = card.querySelector('img').getAttribute('src');
+        // Buscar la descripción (el <p> que no es código)
+        var descripcion = '';
+        card.querySelectorAll('p').forEach(function(p) {
+            if(!p.innerText.includes('Código:')) {
+                descripcion = p.innerText.trim();
+            }
+        });
+        var producto = { nombre, codigo, imagen, descripcion };
+        var productos = JSON.parse(localStorage.getItem('productosSeleccionados') || '[]');
+        productos.push(producto);
+        localStorage.setItem('productosSeleccionados', JSON.stringify(productos));
+        // Mensaje visual
+        var msg = document.createElement('div');
+        msg.textContent = 'Producto agregado al carrito';
+        msg.style.position = 'fixed';
+        msg.style.top = '30px';
+        msg.style.left = '50%';
+        msg.style.transform = 'translateX(-50%)';
+        msg.style.background = '#25d366';
+        msg.style.color = '#222';
+        msg.style.padding = '1rem 2rem';
+        msg.style.borderRadius = '16px';
+        msg.style.fontWeight = 'bold';
+        msg.style.fontSize = '1.1rem';
+        msg.style.boxShadow = '0 2px 12px #0003';
+        msg.style.zIndex = '9999';
+        document.body.appendChild(msg);
+        setTimeout(function(){ msg.remove(); }, 1600);
+    }
     // Menú desplegable responsive
     function toggleMenu() {
         const menu = document.getElementById('menu-list');

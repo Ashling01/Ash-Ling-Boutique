@@ -135,6 +135,9 @@
         document.body.appendChild(msg);
         setTimeout(function(){ msg.remove(); }, 1600);
     }
+    // Cambiar todos los botones de productos para usar la función genérica
+    // Ejemplo de botón:
+    // <button onclick="agregarAComprasDesdeTarjeta(this)">Agregar a compras</button>
     // Función para ampliar imagen al hacer clic
     function ampliarImagen(imgSrc, alt) {
         var overlay = document.createElement('div');

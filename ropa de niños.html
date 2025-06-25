@@ -22,7 +22,7 @@
 </style>
 </head>
 <body>
-    <!-- Menú desplegable reutilizado -->
+    <div class="fondo-animado"></div>
     <nav class="barra-navegacion" style="position:relative;">
         <div class="menu-toggle" id="menu-toggle" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; padding:1rem; position:fixed; top:18px; left:18px; z-index:1100; background:#111; border-radius:12px; box-shadow:0 2px 12px #0006;">
             <img src="iconos/menu.png" alt="Menú" style="width:28px; height:28px;">
@@ -41,30 +41,7 @@
             <li><a href="ofertas.html"><img src="iconos/ofertas.png" alt="Ofertas de temporada" class="icono-nav"> Ofertas de temporada</a></li>
             <li><a href="compras.html"><img src="iconos/carrito.png" alt="Compras" class="icono-nav"> Compras</a></li>
             <li><a href="redes.html"><img src="iconos/redes sociales.png" alt="Redes Sociales" class="icono-nav"> Redes</a></li>
-        </ul>
-    </nav>
-    <script>
-    // Menú desplegable
-    function toggleMenu() {
-        const menu = document.getElementById('menu-list');
-        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-    }
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu-list');
-    toggle.onclick = toggleMenu;
-    document.addEventListener('click', function(e) {
-        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-            menu.style.display = 'none';
-        }
-    });
-    window.addEventListener('resize', function() {
-        if(window.innerWidth > 900) {
-            menu.style.display = 'flex';
-        } else {
-            menu.style.display = 'none';
-        }
-    });
-    </script>
+        </ul>    </nav>
     <h2 style="color:#eab676; font-size:2rem; margin-bottom:2rem; text-align:center;">Ropa de Niños</h2>
     <div class='productos-lista' style="
         display: flex;
@@ -114,6 +91,19 @@
                 letter-spacing: 1px;
                 margin-top: 0.2rem;
             ">Ropa de Niños</span>
+            <button onclick="agregarAComprasDesdeTarjeta(this)" style="
+                margin-top: 1rem;
+                padding: 0.8rem 1.2rem;
+                font-size: 1rem;
+                font-weight: bold;
+                color: #fff;
+                background: #e67e22;
+                border: none;
+                border-radius: 12px;
+                cursor: pointer;
+                transition: background 0.3s, transform 0.3s;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            ">Agregar a compras</button>
         </div>
         <span id="mensaje-ninos" style="
             background: #eab6d6;

@@ -92,6 +92,19 @@
                 letter-spacing: 1px;
                 margin-top: 0.2rem;
             ">Ropa Interior Femenina</span>
+            <button onclick="agregarAComprasDesdeTarjeta(this)" style="
+                margin-top: 1rem;
+                padding: 0.8rem 1.2rem;
+                font-size: 1rem;
+                font-weight: bold;
+                color: #fff;
+                background: #eab676;
+                border: none;
+                border-radius: 12px;
+                cursor: pointer;
+                transition: background 0.3s, transform 0.3s;
+                box-shadow: 0 4px 12px #0003;
+            ">Agregar a compras</button>
         </div>
         <span id="mensaje-femenina" style="
             background: #eab6d6;
@@ -169,26 +182,23 @@
             };
         });
     });
-    // Menú desplegable responsive
-    function toggleMenu() {
-        const menu = document.getElementById('menu-list');
-        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-    }
+    // Menú desplegable
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu-list');
-    toggle.onclick = toggleMenu;
+    toggle.onclick = function() {
+        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    };
     document.addEventListener('click', function(e) {
         if (!toggle.contains(e.target) && !menu.contains(e.target)) {
             menu.style.display = 'none';
         }
     });
-    window.addEventListener('resize', function() {
-        if(window.innerWidth > 900) {
-            menu.style.display = 'flex';
-        } else {
-            menu.style.display = 'none';
+    // Permitir scroll con rueda del mouse dentro del menú
+    menu.addEventListener('wheel', function(e) {
+        if (menu.scrollHeight > menu.clientHeight) {
+            e.stopPropagation();
         }
-    });
+    }, { passive: false });
     // Animación de escritura para mensaje de ropa interior femenina
     const mensajeFemenina = "Próximamente: elegancia, comodidad y sensualidad en cada prenda solo en AshLing Boutique.";
     let iFemenina = 0;
@@ -201,5 +211,13 @@
     }
     escribirMensajeFemenina();
     </script>
+    <footer style="width:100vw; background:#111; color:#eab676; text-align:center; padding:1.2rem 0 0.5rem 0; position:fixed; left:0; bottom:0; z-index:1200; font-size:1rem; box-shadow:0 -2px 12px #0004; display:flex; align-items:center; justify-content:center;">
+        <span style="font-size:0.95rem; color:#eab676; flex:1; text-align:center;">&copy; 2025 AshLing Boutique. Marca registrada. Todos los derechos reservados.</span>
+        <div style="display:flex; gap:1.2rem; justify-content:flex-end; align-items:center; margin-right:2.5vw;">
+            <a href="https://www.facebook.com/AshLingBoutique" target="_blank" title="Facebook" style="display:inline-block; width:28px; height:28px; background:#fff; border-radius:50%; padding:2px;"><img src="iconos/facebook.png" alt="Facebook" style="width:24px; height:24px; display:block;"></a>
+            <a href="https://www.instagram.com/ashling.boutique" target="_blank" title="Instagram" style="display:inline-block; width:28px; height:28px; background:#fff; border-radius:50%; padding:2px;"><img src="iconos/instagram.png" alt="Instagram" style="width:24px; height:24px; display:block;"></a>
+            <a href="https://www.tiktok.com/@ashling.boutique" target="_blank" title="TikTok" style="display:inline-block; width:28px; height:28px; background:#fff; border-radius:50%; padding:2px;"><img src="iconos/tiktok.png" alt="TikTok" style="width:24px; height:24px; display:block;"></a>
+        </div>
+    </footer>
 </body>
 </html>
