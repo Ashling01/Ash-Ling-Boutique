@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ropa de Caballero - Ahs-Ling Boutique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para el modal de imagen grande */
+        .image-modal-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .image-modal-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 90vw;
+            max-height: 90vh;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-modal-content img {
+            max-width: 80vw;
+            max-height: 70vh;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .image-modal-close {
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.85;
+            transition: background 0.2s;
+        }
+        .image-modal-close:hover {
+            background: #ff4757;
+        }
+    </style>
+</head>
+<body class="ropa-caballero">
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="logo/logo.png" alt="AhsLing Boutique" style="height: 150px; width: auto; max-width: 180px; display: block;">
+                Ahs-Ling Boutique
+            </a>
+
+            <!-- Hidden Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#categorias">Categorías</a></li>
+                <li><a href="index.html#categorias">Productos</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Icons Container -->
+            <div class="header-icons">
+                <div class="menu-icon" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="cart-icon" onclick="window.location.href='compras.html'" style="cursor: pointer;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-tshirt"></i> Ropa de Caballero</h1>
+            <p>Estilo y comodidad para el hombre moderno</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Inicio</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <a href="index.html#categorias">Categorías</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>Ropa de Caballero</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <select class="filter-select" id="sortBy">
+                        <option value="">Ordenar por</option>
+                        <option value="newest">Más Nuevos</option>
+                        <option value="popular">Más Populares</option>
+                        <option value="rating">Mejor Valorados</option>
+                        <option value="name">Nombre A-Z</option>
+                    </select>
+                    <select class="filter-select" id="color">
+                        <option value="">Tipo de Prenda</option>
+                        <option value="camisa">Camisas</option>
+                        <option value="pantalon">Pantalones</option>
+                        <option value="polo">Polos</option>
+                        <option value="sueter">Suéteres</option>
+                        <option value="chaqueta">Chaquetas</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Buscar ropa de caballero..." id="searchInput">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <div class="products-count">
+                    Mostrando <span id="productCount">11</span> prendas de caballero
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="ropas-grid" id="ropaGrid">
+                <!-- Prenda 1 -->
+                <div class="ropa-card" data-price="79.99" data-color="camisa" data-category="formal">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W009.jpg" alt="Calsetines Puma" class="zoomable-image">
+                        <div class="ropa-badge nuevo">Nuevo</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Calsetines Puma</h3>
+                        <p class="ropa-description">Calsetines deportivos de alta calidad, ideales para el uso diario y actividades al aire libre.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W009</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(124 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 2 -->
+                <div class="ropa-card" data-price="65.99" data-color="polo" data-category="casual">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W010.jpg" alt="Calsetines Deportivo" class="zoomable-image">
+                        <div class="ropa-badge popular">Popular</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Calsetines Puma</h3>
+                        <p class="ropa-description">Calsetines deportivos de alta calidad, ideales para el uso diario y actividades al aire libre.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W010</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(89 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 3 -->
+                <div class="ropa-card" data-price="89.99" data-color="Calsetines" data-category="formal">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W011.jpg" alt="Calsetines Deportivo" class="zoomable-image">
+                        <div class="ropa-badge nuevo">Nuevo</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Calsetines Tommy</h3>
+                        <p class="ropa-description">Calsetines deportivos de alta calidad, ideales para el uso diario y actividades al aire libre.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W011</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(156 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 4 -->
+                <div class="ropa-card" data-price="95.99" data-color="Calsetines" data-category="casual">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W012.jpg" alt="Calsetines Deportivo" class="zoomable-image">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Calsetines Nike</h3>
+                        <p class="ropa-description">Calsetines versátiles y cómodos, perfectos para el clima fresco con estilo elegante.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W012</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(67 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 5 -->
+                <div class="ropa-card" data-price="72.99" data-color="polo" data-category="deportivo">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W016.jpg" alt="Camiseta PUMA" class="zoomable-image">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Camiseta PUMA</h3>
+                        <p class="ropa-description">Camiseta de alta calidad con tecnología transpirable para máximo confort.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W016</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(45 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 6 -->
+                <div class="ropa-card" data-price="135.99" data-color="camiseta" data-category="formal">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W017.jpg" alt="Camiseta PUMA" class="zoomable-image">
+                        <div class="ropa-badge popular">Popular</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Camiseta Puma</h3>
+                        <p class="ropa-description">Camiseta de alta calidad con tecnología transpirable para máximo confort.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W017</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(198 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 7 -->
+                <div class="ropa-card" data-price="68.99" data-color="camisa" data-category="casual">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W018.jpg" alt="Camiseta TOMMY" class="zoomable-image">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Camiseta Tommy</h3>
+                        <p class="ropa-description">Camiseta moderna con diseño único, perfecta para looks casuales con estilo.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W018</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(73 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 8 -->
+                <div class="ropa-card" data-price="84.99" data-color="pantalon" data-category="casual">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W022.jpg" alt="Gorra ADIDAS" class="zoomable-image">
+                        <div class="ropa-badge popular">Popular</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Gorra ADIDAS</h3>
+                        <p class="ropa-description">Gorra deportiva de alta calidad con diseño moderno y cómodo ajuste.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W022</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(142 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 9 -->
+                <div class="ropa-card" data-price="76.99" data-color="polo" data-category="casual">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W027.jpg" alt="Camista TOMMY" class="zoomable-image">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Camiseta Tommy</h3>
+                        <p class="ropa-description">Camiseta de manga larga con diseño atemporal, ideal para el otoño e invierno.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W027</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(58 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 10 -->
+                <div class="ropa-card" data-price="99.99" data-color="sueter" data-category="elegante">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W029.jpg" alt="Camiseta Tommy" class="zoomable-image">
+                        <div class="ropa-badge nuevo">Nuevo</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Camiseta Tommy</h3>
+                        <p class="ropa-description">Camiseta sofisticada de punto fino, perfecta para looks elegantes y cómodos.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W029</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(91 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prenda 11 -->
+                <div class="ropa-card" data-price="119.99" data-color="chaqueta" data-category="deportivo">
+                    <div class="ropa-image">
+                        <img src="ropa de cabllero/W030.jpg" alt="Chaqueta Deportiva Premium" class="zoomable-image">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="ropa-info">
+                        <h3 class="ropa-title">Camiseta NIKE</h3>
+                        <p class="ropa-description">Camiseta moderna con tecnología avanzada, ideal para actividades deportivas y casual.</p>
+                        <div class="ropa-code">
+                            <span class="product-code">Código: W030</span>
+                        </div>
+                        <div class="ropa-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(34 reseñas)</span>
+                        </div>
+                        <div class="ropa-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ahs-Ling Boutique</h3>
+                    <p>Tu destino para la moda elegante y moderna. Nos especializamos en prendas únicas que resaltan tu personalidad y estilo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <p><a href="index.html#inicio">Inicio</a></p>
+                    <p><a href="index.html#categorias">Categorías</a></p>
+                    <p><a href="index.html#categorias">Productos</a></p>
+                    <p><a href="#ofertas">Ofertas</a></p>
+                    <p><a href="#sobre-nosotros">Sobre Nosotros</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Atención al Cliente</h3>
+                    <p><a href="#ayuda">Centro de Ayuda</a></p>
+                    <p><a href="#envios">Envíos</a></p>
+                    <p><a href="#tallas">Guía de Tallas</a></p>
+                    <p><a href="#cuidados">Cuidado de Prendas</a></p>
+                    <p><a href="#contacto">Contacto</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Principal, San Jacinto</p>
+                    <p><i class="fas fa-phone"></i> +503 77418024</p>
+                    <p><i class="fas fa-envelope"></i> </p>
+                    <p><i class="fas fa-clock"></i> Lun - Sáb: 9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ahs-Ling Boutique. Todos los derechos reservados. | Estilos con ❤️ para mujeres y hombres elegantes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart-global.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Modal para mostrar imagen grande al hacer clic
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar carrito global
+            if (typeof ShoppingCart !== 'undefined') {
+                globalCart = new ShoppingCart();
+            }
+
+            document.querySelectorAll('.zoomable-image').forEach((img, index) => {
+                console.log(`Configurando imagen ${index + 1}:`, img.src);
+                img.style.cursor = 'zoom-in';
+                
+                img.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('¡CLICK DETECTADO EN IMAGEN!', this.src);
+                    
+                    // Versión simplificada del modal
+                    const modal = document.createElement('div');
+                    modal.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.9);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 10000;
+                        cursor: pointer;
+                    `;
+                    
+                    const img = document.createElement('img');
+                    img.src = this.src;
+                    img.style.cssText = `
+                        max-width: 60vw;
+                        max-height: 70vh;
+                        width: auto;
+                        height: auto;
+                        object-fit: contain;
+                        border-radius: 8px;
+                    `;
+                    
+                    modal.appendChild(img);
+                    document.body.appendChild(modal);
+                    
+                    // Cerrar con click
+                    modal.addEventListener('click', () => {
+                        document.body.removeChild(modal);
+                    });
+                    
+                    // Cerrar con ESC
+                    const handleEsc = (e) => {
+                        if (e.key === 'Escape') {
+                            document.body.removeChild(modal);
+                            document.removeEventListener('keydown', handleEsc);
+                        }
+                    };
+                    document.addEventListener('keydown', handleEsc);
+                });
+            });
+
+            // Event listeners para filtros
+            const searchInput = document.getElementById('searchInput');
+            const sortBy = document.getElementById('sortBy');
+            const colorFilter = document.getElementById('color');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', filterProducts);
+            }
+            if (sortBy) {
+                sortBy.addEventListener('change', sortProducts);
+            }
+            if (colorFilter) {
+                colorFilter.addEventListener('change', filterProducts);
+            }
+
+            // Toggle vista
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const view = this.dataset.view;
+                    const grid = document.getElementById('ropaGrid');
+                    
+                    if (grid) {
+                        if (view === 'list') {
+                            grid.style.gridTemplateColumns = '1fr';
+                        } else {
+                            grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
+                        }
+                    }
+                });
+            });
+
+            // Event listeners para agregar al carrito
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    addToCart(this);
+                });
+            });
+        });
+
+        // Toggle favoritos
+        function toggleFavorite(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                btn.classList.add('active');
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                btn.classList.remove('active');
+            }
+        }
+
+        // Agregar al carrito usando el sistema global
+        function addToCart(btn) {
+            const card = btn.closest('.ropa-card');
+            const title = card.querySelector('.ropa-title').textContent;
+            const codeElement = card.querySelector('.product-code');
+            const description = card.querySelector('.ropa-description').textContent;
+            const imageSrc = card.querySelector('.ropa-image img').src;
+            const priceAttr = card.dataset.price;
+            const category = card.dataset.category;
+            
+            // Extraer código del producto o generar uno si no existe
+            let productCode = '';
+            if (codeElement && codeElement.textContent.trim()) {
+                productCode = codeElement.textContent.replace('Código: ', '').trim();
+            } else {
+                // Generar código temporal basado en el nombre de la imagen
+                const imageName = imageSrc.split('/').pop().replace(/\.(jpg|jpeg|png|gif)$/i, '');
+                productCode = `RC-${imageName}`;
+            }
+            
+            // Usar precio del dataset o calcular según categoría
+            let price = priceAttr ? parseFloat(priceAttr) : 60.00;
+            
+            if (!priceAttr) {
+                if (title.toLowerCase().includes('chaqueta') || title.toLowerCase().includes('blazer')) {
+                    price = Math.random() * 30 + 90; // $90-120 para chaquetas
+                } else if (category === 'formal' || title.toLowerCase().includes('formal')) {
+                    price = Math.random() * 20 + 70; // $70-90 para formales
+                } else if (title.toLowerCase().includes('premium')) {
+                    price = Math.random() * 25 + 80; // $80-105 para premium
+                } else {
+                    price = Math.random() * 20 + 60; // $60-80 para casuales
+                }
+            }
+            
+            const product = {
+                id: productCode,
+                code: productCode,
+                name: title,
+                description: description,
+                price: Math.round(price * 100) / 100, // Redondear a 2 decimales
+                image: imageSrc,
+                category: 'Ropa de Caballero'
+            };
+
+            // Usar el carrito global
+            if (globalCart) {
+                globalCart.addToCart(product);
+            }
+            
+            // Mostrar animación en el botón
+            btn.style.transform = 'scale(0.95)';
+            btn.style.background = '#28a745';
+            btn.innerHTML = '<i class="fas fa-check"></i> Agregado';
+            
+            setTimeout(() => {
+                btn.style.transform = '';
+                btn.style.background = '';
+                btn.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar al Carrito';
+            }, 1500);
+        }
+
+        // Filtros y búsqueda (simplificados para ropa de caballero)
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
+            const colorFilter = document.getElementById('color')?.value || '';
+            const cards = document.querySelectorAll('.ropa-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.querySelector('.ropa-title').textContent.toLowerCase();
+                const description = card.querySelector('.ropa-description').textContent.toLowerCase();
+                const color = card.dataset.color;
+
+                let showCard = true;
+
+                // Filtro de búsqueda
+                if (searchTerm && !title.includes(searchTerm) && !description.includes(searchTerm)) {
+                    showCard = false;
+                }
+
+                // Filtro de tipo de prenda
+                if (colorFilter && color !== colorFilter) {
+                    showCard = false;
+                }
+
+                card.style.display = showCard ? 'block' : 'none';
+                if (showCard) visibleCount++;
+            });
+
+            const productCountElement = document.getElementById('productCount');
+            if (productCountElement) {
+                productCountElement.textContent = visibleCount;
+            }
+        }
+
+        function sortProducts() {
+            const sortBy = document.getElementById('sortBy')?.value || '';
+            const grid = document.getElementById('ropaGrid');
+            if (!grid) return;
+            
+            const cards = Array.from(grid.children);
+
+            cards.sort((a, b) => {
+                const titleA = a.querySelector('.ropa-title').textContent;
+                const titleB = b.querySelector('.ropa-title').textContent;
+
+                switch (sortBy) {
+                    case 'name':
+                        return titleA.localeCompare(titleB);
+                    case 'newest':
+                        return a.querySelector('.ropa-badge')?.textContent === 'Nuevo' ? -1 : 1;
+                    case 'popular':
+                        return a.querySelector('.ropa-badge')?.textContent === 'Popular' ? -1 : 1;
+                    case 'rating':
+                        const starsA = a.querySelectorAll('.rating-stars .fas').length;
+                        const starsB = b.querySelectorAll('.rating-stars .fas').length;
+                        return starsB - starsA;
+                    default:
+                        return 0;
+                }
+            });
+
+            cards.forEach(card => grid.appendChild(card));
+        }
+
+        // Función quickView temporal
+        function quickView(btn) {
+            console.log('QuickView clicked');
+            // Por ahora no hace nada, evita errores
+        }
+
+        // Event listeners para filtros
+    </script>
+</body>
+</html>

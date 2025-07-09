@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfumes - Ahs-Ling Boutique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="carteras">
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="logo/logo.png" alt="Ahs-Ling Boutique" style="height: 40px; width: auto;">
+                Ahs-Ling Boutique
+            </a>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carteras.html">Carteras</a></li>
+                <li><a href="ropa-dama.html">Ropa de Dama</a></li>
+                <li><a href="ropa-caballero.html">Ropa de Caballero</a></li>
+                <li><a href="perfumes.html">Perfumes</a></li>
+                <li><a href="accesorios.html">Accesorios</a></li>
+            </ul>
+
+            <!-- Icons Container -->
+            <div class="header-icons">
+                <div class="menu-icon" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="cart-icon" onclick="window.location.href='compras.html'" style="cursor: pointer;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-shopping-bag"></i> Carteras</h1>
+            <p>Elegancia y funcionalidad en cada diseño</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Inicio</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <a href="index.html#categorias">Categorías</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>Carteras</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <select class="filter-select" id="sortBy">
+                        <option value="">Ordenar por</option>
+                        <option value="newest">Más Nuevos</option>
+                        <option value="popular">Más Populares</option>
+                        <option value="rating">Mejor Valorados</option>
+                        <option value="name">Nombre A-Z</option>
+                    </select>
+                    <select class="filter-select" id="color">
+                        <option value="">Color</option>
+                        <option value="negro">Negro</option>
+                        <option value="marron">Marrón</option>
+                        <option value="beige">Beige</option>
+                        <option value="rojo">Rojo</option>
+                        <option value="azul">Azul</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Buscar carteras..." id="searchInput">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <div class="products-count">
+                    Mostrando <span id="productCount">12</span> carteras
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="carteras-grid" id="carterasGrid">
+                <!-- Cartera 1 -->
+                <div class="cartera-card" data-price="89.99" data-color="negro" data-category="elegante">
+                    <div class="cartera-image">
+                        <img src="carteras/BHH027.jpg" alt="Cartera Negra PASCALI" class="zoomable-image">
+                        <div class="cartera-badge nuevo">Nuevo</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="cartera-info">
+                        <h3 class="cartera-title">Cartera Negra PASCALI</h3>
+                        <p class="cartera-description">Cartera elegante de cuero genuino, perfecta para el uso diario y ocasiones especiales.</p>
+                        <div class="cartera-code">
+                            <span class="product-code">Código: BHH027</span>
+                        </div>
+                        <div class="cartera-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(124 reseñas)</span>
+                        </div>
+                        <div class="cartera-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cartera 2 -->
+                <div class="cartera-card" data-price="124.99" data-color="marron" data-category="casual">
+                    <div class="cartera-image">
+                        <img src="carteras/BHH164.jpg" alt="Cartera Café PASCALI" class="zoomable-image">
+                        <div class="cartera-badge popular">Popular</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="cartera-info">
+                        <h3 class="cartera-title">Cartera Café PASCALI</h3>
+                        <p class="cartera-description">Cartera espaciosa y cómoda, ideal para el día a día con múltiples compartimentos.</p>
+                        <div class="cartera-code">
+                            <span class="product-code">Código: BHH164</span>
+                        </div>
+                        <div class="cartera-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(89 reseñas)</span>
+                        </div>
+                        <div class="cartera-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cartera 3 -->
+                <div class="cartera-card" data-price="199.99" data-color="rojo" data-category="elegante">
+                    <div class="cartera-image">
+                        <img src="carteras/N075.jpg" alt="Cartera Pequeña TOMMY" class="zoomable-image">
+                        <div class="cartera-badge popular">Popular</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="cartera-info">
+                        <h3 class="cartera-title">Cartera Pequeña TOMMY</h3>
+                        <p class="cartera-description">Diseño exclusivo con detalles elegantes, perfecta para eventos especiales.</p>
+                        <div class="cartera-code">
+                            <span class="product-code">Código: N075</span>
+                        </div>
+                        <div class="cartera-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(256 reseñas)</span>
+                        </div>
+                        <div class="cartera-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cartera 4 -->
+                <div class="cartera-card" data-price="159.99" data-color="beige" data-category="casual">
+                    <div class="cartera-image">
+                        <img src="carteras/N085.jpg" alt="Cartera GUESS" class="zoomable-image">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="cartera-info">
+                        <h3 class="cartera-title">Cartera GUESS</h3>
+                        <p class="cartera-description">Cartera amplia y versátil, perfecta para trabajo y viajes con diseño minimalista.</p>
+                        <div class="cartera-code">
+                            <span class="product-code">Código: N085</span>
+                        </div>
+                        <div class="cartera-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(67 reseñas)</span>
+                        </div>
+                        <div class="cartera-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cartera 5 -->
+                <div class="cartera-card" data-price="79.99" data-color="azul" data-category="deportiva">
+                    <div class="cartera-image">
+                        <img src="carteras/N089.jpg" alt="Cartera ANNE KLEIN" class="zoomable-image">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="cartera-info">
+                        <h3 class="cartera-title">Cartera ANNE KLEIN</h3>
+                        <p class="cartera-description">Cartera moderna con compartimentos funcionales y diseño ergonómico.</p>
+                        <div class="cartera-code">
+                            <span class="product-code">Código: N089</span>
+                        </div>
+                        <div class="cartera-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(45 reseñas)</span>
+                        </div>
+                        <div class="cartera-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cartera 6 -->
+                <div class="cartera-card" data-price="299.99" data-color="negro" data-category="lujo">
+                    <div class="cartera-image">
+                        <img src="carteras/Z886.jpg" alt="Cartera" class="zoomable-image">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="cartera-info">
+                        <h3 class="cartera-title">Cartera</h3>
+                        <p class="cartera-description">Cartera única de edición limitada con materiales premium y acabados de lujo.</p>
+                        <div class="cartera-code">
+                            <span class="product-code">Código: Z886</span>
+                        </div>
+                        <div class="cartera-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">(18 reseñas)</span>
+                        </div>
+                        <div class="cartera-actions">
+                            <button class="btn-primary add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ahs-Ling Boutique</h3>
+                    <p>Tu destino para la moda elegante y moderna. Nos especializamos en prendas únicas que resaltan tu personalidad y estilo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <p><a href="index.html#inicio">Inicio</a></p>
+                    <p><a href="index.html#categorias">Categorías</a></p>
+                    <p><a href="index.html#categorias">Productos</a></p>
+                    <p><a href="#ofertas">Ofertas</a></p>
+                    <p><a href="#sobre-nosotros">Sobre Nosotros</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Atención al Cliente</h3>
+                    <p><a href="#ayuda">Centro de Ayuda</a></p>
+                    <p><a href="#envios">Envíos</a></p>
+                    <p><a href="#tallas">Guía de Tallas</a></p>
+                    <p><a href="#cuidados">Cuidado de Prendas</a></p>
+                    <p><a href="#contacto">Contacto</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Principal, San Jacinto</p>
+                    <p><i class="fas fa-phone"></i> +503 77418024</p>
+                    <p><i class="fas fa-envelope"></i> </p>
+                    <p><i class="fas fa-clock"></i> Lun - Sáb: 9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ahs-Ling Boutique. Todos los derechos reservados. | Diseñado con ❤️ para mujeres elegantes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart-global.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Toggle favoritos
+        function toggleFavorite(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                btn.classList.add('active');
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                btn.classList.remove('active');
+            }
+        }
+
+        // Agregar al carrito usando el sistema global
+        function addToCart(btn) {
+            const card = btn.closest('.cartera-card');
+            const title = card.querySelector('.cartera-title').textContent;
+            const codeElement = card.querySelector('.product-code');
+            const description = card.querySelector('.cartera-description').textContent;
+            const imageSrc = card.querySelector('.cartera-image img').src;
+            const priceAttr = card.dataset.price;
+            const category = card.dataset.category;
+            
+            // Extraer código del producto o generar uno si no existe
+            let productCode = '';
+            if (codeElement && codeElement.textContent.trim()) {
+                productCode = codeElement.textContent.replace('Código: ', '').trim();
+            } else {
+                // Generar código temporal basado en el nombre de la imagen
+                const imageName = imageSrc.split('/').pop().replace(/\.(jpg|jpeg|png|gif)$/i, '');
+                productCode = `CAR-${imageName}`;
+            }
+            
+            // Usar precio del dataset o calcular según categoría
+            let price = priceAttr ? parseFloat(priceAttr) : 120.00;
+            
+            if (!priceAttr) {
+                if (title.toLowerCase().includes('lujo') || title.toLowerCase().includes('diseñador')) {
+                    price = Math.random() * 100 + 200; // $200-300 para lujo
+                } else if (category === 'elegante' || title.toLowerCase().includes('elegante')) {
+                    price = Math.random() * 50 + 150; // $150-200 para elegantes
+                } else if (title.toLowerCase().includes('tote') || title.toLowerCase().includes('bolso')) {
+                    price = Math.random() * 40 + 120; // $120-160 para bolsos
+                } else {
+                    price = Math.random() * 30 + 90; // $90-120 para casuales
+                }
+            }
+            
+            const product = {
+                id: productCode,
+                code: productCode,
+                name: title,
+                description: description,
+                price: Math.round(price * 100) / 100, // Redondear a 2 decimales
+                image: imageSrc,
+                category: 'Carteras'
+            };
+
+            // Usar el carrito global
+            if (globalCart) {
+                globalCart.addToCart(product);
+            }
+            
+            // Mostrar animación en el botón
+            btn.style.transform = 'scale(0.95)';
+            btn.style.background = '#28a745';
+            btn.innerHTML = '<i class="fas fa-check"></i> Agregado';
+            
+            setTimeout(() => {
+                btn.style.transform = '';
+                btn.style.background = '';
+                btn.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar al Carrito';
+            }, 1500);
+        }
+
+        // Filtros y búsqueda
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
+            const colorFilter = document.getElementById('color')?.value || '';
+            const cards = document.querySelectorAll('.cartera-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.querySelector('.cartera-title').textContent.toLowerCase();
+                const description = card.querySelector('.cartera-description').textContent.toLowerCase();
+                const color = card.dataset.color;
+
+                let showCard = true;
+
+                // Filtro de búsqueda
+                if (searchTerm && !title.includes(searchTerm) && !description.includes(searchTerm)) {
+                    showCard = false;
+                }
+
+                // Filtro de color
+                if (colorFilter && color !== colorFilter) {
+                    showCard = false;
+                }
+
+                card.style.display = showCard ? 'block' : 'none';
+                if (showCard) visibleCount++;
+            });
+
+            const productCountElement = document.getElementById('productCount');
+            if (productCountElement) {
+                productCountElement.textContent = visibleCount;
+            }
+        }
+
+        function sortProducts() {
+            const sortBy = document.getElementById('sortBy')?.value || '';
+            const grid = document.getElementById('carterasGrid');
+            if (!grid) return;
+            
+            const cards = Array.from(grid.children);
+
+            cards.sort((a, b) => {
+                const titleA = a.querySelector('.cartera-title').textContent;
+                const titleB = b.querySelector('.cartera-title').textContent;
+
+                switch (sortBy) {
+                    case 'name':
+                        return titleA.localeCompare(titleB);
+                    case 'newest':
+                        return a.querySelector('.cartera-badge')?.textContent === 'Nuevo' ? -1 : 1;
+                    case 'popular':
+                        return a.querySelector('.cartera-badge')?.textContent === 'Popular' ? -1 : 1;
+                    case 'rating':
+                        const starsA = a.querySelectorAll('.rating-stars .fas').length;
+                        const starsB = b.querySelectorAll('.rating-stars .fas').length;
+                        return starsB - starsA;
+                    default:
+                        return 0;
+                }
+            });
+
+            cards.forEach(card => grid.appendChild(card));
+        }
+
+        // Event listeners para filtros y otras funcionalidades
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar carrito global
+            if (typeof ShoppingCart !== 'undefined') {
+                globalCart = new ShoppingCart();
+            }
+            
+            // Event listeners para agregar al carrito
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    addToCart(this);
+                });
+            });
+
+            // Event listeners para filtros
+            const searchInput = document.getElementById('searchInput');
+            const sortBy = document.getElementById('sortBy');
+            const colorFilter = document.getElementById('color');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', filterProducts);
+            }
+            if (sortBy) {
+                sortBy.addEventListener('change', sortProducts);
+            }
+            if (colorFilter) {
+                colorFilter.addEventListener('change', filterProducts);
+            }
+
+            // Toggle vista
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const view = this.dataset.view;
+                    const grid = document.getElementById('carterasGrid');
+                    
+                    if (grid) {
+                        if (view === 'list') {
+                            grid.style.gridTemplateColumns = '1fr';
+                        } else {
+                            grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
+                        }
+                    }
+                });
+            });
+            
+            // Modal de imagen dinámico
+            document.querySelectorAll('.zoomable-image').forEach((img, index) => {
+                img.style.cursor = 'zoom-in';
+                
+                img.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openImageModal(this.src, this.alt);
+                });
+            });
+        });
+
+        // Modal de imagen dinámico
+        function openImageModal(src, alt) {
+            
+            // Crear modal dinámicamente
+            const modal = document.createElement('div');
+            modal.className = 'image-modal-bg';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            
+            const content = document.createElement('div');
+            content.className = 'image-modal-content';
+            content.style.cssText = `
+                position: relative;
+                max-width: 70vw;
+                max-height: 80vh;
+                transform: scale(0.7);
+                transition: transform 0.3s ease;
+            `;
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.innerHTML = '&times;';
+            closeBtn.className = 'image-modal-close';
+            closeBtn.style.cssText = `
+                position: absolute;
+                top: -40px;
+                right: 0;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 40px;
+                cursor: pointer;
+                z-index: 10001;
+            `;
+            
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = alt;
+            img.style.cssText = `
+                max-width: 60vw;
+                max-height: 70vh;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                border-radius: 8px;
+            `;
+            
+            content.appendChild(closeBtn);
+            content.appendChild(img);
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+            
+            // Animar entrada
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                content.style.transform = 'scale(1)';
+            }, 10);
+            
+            // Event listeners para cerrar
+            const closeModal = () => {
+                modal.style.opacity = '0';
+                content.style.transform = 'scale(0.7)';
+                setTimeout(() => {
+                    if (modal.parentNode) {
+                        modal.parentNode.removeChild(modal);
+                    }
+                }, 300);
+            };
+            
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Cerrar con ESC
+            const handleEsc = (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                    document.removeEventListener('keydown', handleEsc);
+                }
+            };
+            document.addEventListener('keydown', handleEsc);
+        }
+    </script>
+</body>
+</html>
