@@ -1,4 +1,4 @@
-# AhsLing Boutique - Sitio Web Completo
+# Ash-Ling Boutique - Sitio Web Completo
 
 ## 🌟 Descripción
 Sitio web elegante y moderno para Ash-Ling Boutique, especializada en moda femenina, masculina, carteras, perfumes y accesorios. Diseñado con una experiencia de usuario excepcional y una identidad visual sofisticada.
